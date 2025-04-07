@@ -24,7 +24,7 @@ const [key, setKey] = useState(0);
 useEffect(() => {
                async function loadFonts() {
                      await Font.loadAsync({
-                       'Ionicons': require('./assets/fonts/Ionicons.ttf'),
+                       'Ionicons': require('@/assets/fonts/Ionicons.ttf'),
                      });
                      setFontLoaded(true);
                    }

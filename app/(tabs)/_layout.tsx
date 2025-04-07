@@ -10,7 +10,7 @@ const [fontLoaded, setFontLoaded] = useState(false);
   useEffect(() => {
     async function loadFonts() {
       await Font.loadAsync({
-        'Ionicons': require('./assets/fonts/Ionicons.ttf'),
+        'Ionicons': require('@/assets/fonts/Ionicons.ttf'),
       });
       setFontLoaded(true);
     }

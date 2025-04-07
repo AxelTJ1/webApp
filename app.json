@@ -41,7 +41,7 @@
     ],
     "experiments": {
       "typedRoutes": true,
-      "baseUrl": "/FYP_webApp"
+      "baseUrl": "/webApp"
     },
     "extra": {
       "router": {

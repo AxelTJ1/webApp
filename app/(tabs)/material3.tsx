@@ -11,7 +11,7 @@ const assetId = require('@/assets/video/Datapath.mp4');
 
 export default function Material3() {
 const [fontsLoaded] = useFonts({
-    Ionicons: require('./assets/fonts/Ionicons.ttf'),
+    Ionicons: require('@/assets/fonts/Ionicons.ttf'),
   });
 
   if (!fontLoaded) {

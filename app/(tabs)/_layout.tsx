@@ -5,7 +5,7 @@ import { Font } from 'expo-font';
 
 export default function TabLayout() {
 const [fontsLoaded] = useFonts({
-    Ionicons: require('./assets/fonts/Ionicons.ttf'),
+    Ionicons: require('@/assets/fonts/Ionicons.ttf'),
   });
 
     const segments = useSegments();

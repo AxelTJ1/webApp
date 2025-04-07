@@ -23,7 +23,7 @@ const questions = [
 
 export default function Quiz1() {
 const [fontsLoaded] = useFonts({
-    Ionicons: require('./assets/fonts/Ionicons.ttf'),
+    Ionicons: require('@/assets/fonts/Ionicons.ttf'),
   });
 
   if (!fontLoaded) {

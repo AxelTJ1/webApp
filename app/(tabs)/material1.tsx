@@ -11,7 +11,7 @@ const assetId = require('@/assets/video/CPU_Design.mp4');
 
 export default function Material1() {
 const [fontsLoaded] = useFonts({
-    Ionicons: require('./assets/fonts/Ionicons.ttf'),
+    Ionicons: require('@/assets/fonts/Ionicons.ttf'),
   });
 
   if (!fontLoaded) {

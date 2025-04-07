@@ -5,11 +5,6 @@ import { Link, useFocusEffect } from 'expo-router';
 import Animated, {SlideInRight } from "react-native-reanimated";
 
 import Button from '@/components/Button';
-import '@/app/(tabs)/material1';
-import '@/app/(tabs)/material2';
-import '@/app/(tabs)/material3';
-import '@/app/(tabs)/material4';
-
 
 export default function Index() {
 const [key, setKey] = useState(0);

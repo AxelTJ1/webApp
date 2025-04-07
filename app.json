@@ -22,9 +22,9 @@
       "package": "com.potatwa.fyp"
     },
     "web": {
+      "output": "server",
       "bundler": "metro",
-      "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/images/splash.png"
     },
     "plugins": [
       "expo-router",
@@ -40,7 +40,8 @@
       "expo-video"
     ],
     "experiments": {
-      "typedRoutes": true
+      "typedRoutes": true,
+      "baseUrl": "/FYP_webApp"
     },
     "extra": {
       "router": {

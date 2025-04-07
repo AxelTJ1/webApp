@@ -53,7 +53,7 @@ const { width, height } = Dimensions.get('window');
                                              useEffect(() => {
                                                           async function loadFonts() {
                                                                 await Font.loadAsync({
-                                                                  'custom-font': require('./assets/fonts/Ionicons.ttf'),
+                                                                  'Ionicons': require('./assets/fonts/Ionicons.ttf'),
                                                                 });
                                                                 setFontLoaded(true);
                                                               }

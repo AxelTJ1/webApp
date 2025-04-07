@@ -3,21 +3,12 @@ import { Link, useNavigation, useFocusEffect } from 'expo-router';
 import React, { useLayoutEffect, useState, useCallback, useRef, useEffect } from 'react';
 import { useVideoPlayer, VideoView } from 'expo-video';
 import { useEvent } from 'expo';
-import { useFonts } from 'expo-font';
 
 import Button from '@/components/Button';
 
 const assetId = require('@/assets/video/CPU_Design.mp4');
 
 export default function Material1() {
-const [fontsLoaded] = useFonts({
-    Ionicons: require('@/assets/fonts/Ionicons.ttf'),
-  });
-
-  if (!fontLoaded) {
-          return null;
-        }
-
   const { width, height } = Dimensions.get('window');
 
   const videoWidth = width * 0.9;

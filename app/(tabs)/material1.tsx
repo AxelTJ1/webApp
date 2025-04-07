@@ -3,12 +3,14 @@ import { Link, useNavigation, useFocusEffect } from 'expo-router';
 import React, { useLayoutEffect, useState, useCallback, useRef, useEffect } from 'react';
 import { useVideoPlayer, VideoView } from 'expo-video';
 import { useEvent } from 'expo';
+import { Font } from 'expo-font';
 
 import Button from '@/components/Button';
 
 const assetId = require('@/assets/video/CPU_Design.mp4');
 
 export default function Material1() {
+const [fontLoaded, setFontLoaded] = useState(false);
   const { width, height } = Dimensions.get('window');
 
   const videoWidth = width * 0.9;
@@ -49,6 +51,14 @@ export default function Material1() {
               );
 
               useEffect(() => {
+              async function loadFonts() {
+                    await Font.loadAsync({
+                      'custom-font': require('./assets/fonts/Ionicons.ttf'),
+                    });
+                    setFontLoaded(true);
+                  }
+
+                  loadFonts();
                 if (player) {
                   player.play();
                 }

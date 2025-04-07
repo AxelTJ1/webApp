@@ -1,10 +1,31 @@
 import { Tabs, useSegments } from "expo-router";
 import Ionicons from '@expo/vector-icons/Ionicons';
+import { useState, useEffect } from 'react';
+import { Font } from 'expo-font';
 
 export default function TabLayout() {
+const [fontLoaded, setFontLoaded] = useState(false);
+
+
+  useEffect(() => {
+    async function loadFonts() {
+      await Font.loadAsync({
+        'custom-font': require('./assets/fonts/Ionicons.ttf'),
+      });
+      setFontLoaded(true);
+    }
+
+    loadFonts();
+  }, []);
+
     const segments = useSegments();
     const hiddenRoutes = ['material1','quiz1', 'material2','quiz2', 'material3','quiz3', 'material4','quiz4', 'complete'];
     const isTabBarHidden = segments.some(segment => hiddenRoutes.includes(segment));
+
+    if (!fontLoaded) {
+        return null;
+      }
+
   return (
       <Tabs screenOptions={{
           tabBarActiveTintColor: '#00008b',

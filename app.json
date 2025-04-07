@@ -22,7 +22,7 @@
       "package": "com.potatwa.fyp"
     },
     "web": {
-      "output": "server",
+      "output": "static",
       "bundler": "metro",
       "favicon": "./assets/icons/potato.png"
     },

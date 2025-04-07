@@ -4,6 +4,7 @@ import React, { useState, useEffect, useCallback, useLayoutEffect } from 'react'
 import * as Progress from 'react-native-progress';
 import Animated, {SlideInRight } from "react-native-reanimated";
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { Font } from 'expo-font';
 
 import Button from '@/components/Button';
 
@@ -21,7 +22,19 @@ const questions = [
 ];
 
 export default function Quiz1() {
+const [fontLoaded, setFontLoaded] = useState(false);
  const [key, setKey] = useState(0);
+
+  useEffect(() => {
+               async function loadFonts() {
+                     await Font.loadAsync({
+                       'custom-font': require('./assets/fonts/Ionicons.ttf'),
+                     });
+                     setFontLoaded(true);
+                   }
+
+                   loadFonts();
+               }, []);
 
 const navigation = useNavigation();
 

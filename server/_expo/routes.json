@@ -1,0 +1,88 @@
+{
+  "apiRoutes": [],
+  "htmlRoutes": [
+    {
+      "file": "./(tabs)/index.tsx",
+      "page": "/(tabs)/index",
+      "namedRegex": "^(?:/\\(tabs\\))?(?:/)?$",
+      "routeKeys": {}
+    },
+    {
+      "file": "./(tabs)/quiz4.tsx",
+      "page": "/(tabs)/quiz4",
+      "namedRegex": "^(?:/\\(tabs\\))?/quiz4(?:/)?$",
+      "routeKeys": {}
+    },
+    {
+      "file": "./(tabs)/quiz3.tsx",
+      "page": "/(tabs)/quiz3",
+      "namedRegex": "^(?:/\\(tabs\\))?/quiz3(?:/)?$",
+      "routeKeys": {}
+    },
+    {
+      "file": "./(tabs)/quiz2.tsx",
+      "page": "/(tabs)/quiz2",
+      "namedRegex": "^(?:/\\(tabs\\))?/quiz2(?:/)?$",
+      "routeKeys": {}
+    },
+    {
+      "file": "./(tabs)/quiz1.tsx",
+      "page": "/(tabs)/quiz1",
+      "namedRegex": "^(?:/\\(tabs\\))?/quiz1(?:/)?$",
+      "routeKeys": {}
+    },
+    {
+      "file": "./(tabs)/about.tsx",
+      "page": "/(tabs)/about",
+      "namedRegex": "^(?:/\\(tabs\\))?/about(?:/)?$",
+      "routeKeys": {}
+    },
+    {
+      "file": "./(tabs)/complete.tsx",
+      "page": "/(tabs)/complete",
+      "namedRegex": "^(?:/\\(tabs\\))?/complete(?:/)?$",
+      "routeKeys": {}
+    },
+    {
+      "file": "expo-router/build/views/Sitemap.js",
+      "page": "/_sitemap",
+      "namedRegex": "^/_sitemap(?:/)?$",
+      "routeKeys": {},
+      "generated": true
+    },
+    {
+      "file": "./(tabs)/material4.tsx",
+      "page": "/(tabs)/material4",
+      "namedRegex": "^(?:/\\(tabs\\))?/material4(?:/)?$",
+      "routeKeys": {}
+    },
+    {
+      "file": "./(tabs)/material3.tsx",
+      "page": "/(tabs)/material3",
+      "namedRegex": "^(?:/\\(tabs\\))?/material3(?:/)?$",
+      "routeKeys": {}
+    },
+    {
+      "file": "./(tabs)/material2.tsx",
+      "page": "/(tabs)/material2",
+      "namedRegex": "^(?:/\\(tabs\\))?/material2(?:/)?$",
+      "routeKeys": {}
+    },
+    {
+      "file": "./(tabs)/material1.tsx",
+      "page": "/(tabs)/material1",
+      "namedRegex": "^(?:/\\(tabs\\))?/material1(?:/)?$",
+      "routeKeys": {}
+    }
+  ],
+  "notFoundRoutes": [
+    {
+      "file": "./+not-found.tsx",
+      "page": "/+not-found",
+      "namedRegex": "^(?:/(?<notfound>.+?))?(?:/)?$",
+      "routeKeys": {
+        "notfound": "not-found"
+      }
+    }
+  ]
+}

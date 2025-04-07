@@ -24,7 +24,7 @@
     "web": {
       "output": "server",
       "bundler": "metro",
-      "favicon": "./assets/images/splash.png"
+      "favicon": "./assets/icons/potato.png"
     },
     "plugins": [
       "expo-router",
@@ -40,8 +40,7 @@
       "expo-video"
     ],
     "experiments": {
-      "typedRoutes": true,
-      "baseUrl": "/FYP_webApp"
+      "typedRoutes": true
     },
     "extra": {
       "router": {

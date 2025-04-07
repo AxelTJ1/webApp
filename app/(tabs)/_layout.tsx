@@ -4,19 +4,9 @@ import { useState, useEffect } from 'react';
 import { Font } from 'expo-font';
 
 export default function TabLayout() {
-const [fontLoaded, setFontLoaded] = useState(false);
-
-
-  useEffect(() => {
-    async function loadFonts() {
-      await Font.loadAsync({
-        'Ionicons': require('@/assets/fonts/Ionicons.ttf'),
-      });
-      setFontLoaded(true);
-    }
-
-    loadFonts();
-  }, []);
+const [fontsLoaded] = useFonts({
+    Ionicons: require('./assets/fonts/Ionicons.ttf'),
+  });
 
     const segments = useSegments();
     const hiddenRoutes = ['material1','quiz1', 'material2','quiz2', 'material3','quiz3', 'material4','quiz4', 'complete'];

@@ -3,7 +3,7 @@ import { Link, useNavigation, useFocusEffect } from 'expo-router';
 import React, { useState, useEffect, useCallback, useLayoutEffect } from 'react';
 import * as Progress from 'react-native-progress';
 import Animated, {SlideInRight } from "react-native-reanimated";
-import { Font } from 'expo-font';
+import { useFonts } from 'expo-font';
 
 import Button from '@/components/Button';
 
@@ -18,19 +18,17 @@ const questions = [
 ];
 
 export default function Quiz4() {
-const [fontLoaded, setFontLoaded] = useState(false);
+const [fontsLoaded] = useFonts({
+    Ionicons: require('./assets/fonts/Ionicons.ttf'),
+  });
+
+  if (!fontLoaded) {
+          return null;
+        }
+
 const [key, setKey] = useState(0);
 
-useEffect(() => {
-               async function loadFonts() {
-                     await Font.loadAsync({
-                       'Ionicons': require('@/assets/fonts/Ionicons.ttf'),
-                     });
-                     setFontLoaded(true);
-                   }
 
-                   loadFonts();
-               }, []);
 
 const navigation = useNavigation();
 

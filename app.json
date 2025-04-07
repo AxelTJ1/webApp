@@ -40,7 +40,8 @@
       "expo-video"
     ],
     "experiments": {
-      "typedRoutes": true
+      "typedRoutes": true,
+      "baseUrl": "/FYP_webApp"
     },
     "extra": {
       "router": {

@@ -10,7 +10,7 @@
     "web": "expo start --web",
     "test": "jest --watchAll",
     "lint": "expo lint",
-    "deploy": "gh-pages --nojekyll -d dist",
+    "deploy": "App --nojekyll -d dist",
     "predeploy": "expo export -p web"
   },
   "jest": {

@@ -129,7 +129,14 @@ useFocusEffect(
                               ? (<Button
                                                                       theme="next"
                                                                       label="Finish"
-                                                                      onPress={() => navigation.navigate("complete", { correctCount, wrongCount })}
+                                                                      onPress={() => {
+                                                                      setIsModalVisible(false);
+                                                                      requestAnimationFrame(() => {
+                                                                      setTimeout(() => {
+                                                                      navigation.navigate("complete", { correctCount, wrongCount })
+                                                                      }, 100);
+                                                                      });
+                                                                      }}
                                                                     />)
 
                               : (<Button

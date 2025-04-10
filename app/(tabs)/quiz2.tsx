@@ -145,7 +145,17 @@ useFocusEffect(
                               ? (<Button
                                                                       theme="next"
                                                                       label="Finish"
-                                                                      onPress={handleFinishQuiz}
+                                                                      onPress={() => {
+                                                                                                               setIsModalVisible(false);
+
+                                                                                                               requestAnimationFrame(() => {
+
+                                                                                                                 setTimeout(() => {
+
+                                                                                                                   handleFinishQuiz();
+                                                                                                                 }, 100);
+                                                                                                               });
+                                                                                                             }}
                                                                     />)
 
                               : (<Button

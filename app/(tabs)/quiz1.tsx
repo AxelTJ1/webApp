@@ -5,8 +5,10 @@ import * as Progress from 'react-native-progress';
 import Animated, {SlideInRight } from "react-native-reanimated";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+// Custom button component
 import Button from '@/components/Button';
 
+// Initialize the questions and the answer
 const questions = [
   { id: 1, question: "What is the main function of a CPU?", options: ["Displaying images on a screen", "Storing files permanently", "Executing instructions and managing data flow", "Controlling network connections"], correctAnswer: "Executing instructions and managing data flow" },
   { id: 2, question: "What are the key components of a MIPS CPU?", options: ["Hard drive, monitor, keyboard", "Register file, memory, ALU, control unit", "Cache memory, GPU, power supply", "RAM, ROM, SSD"], correctAnswer: "Register file, memory, ALU, control unit" },
@@ -25,6 +27,7 @@ export default function Quiz1() {
 
 const navigation = useNavigation();
 
+      // 'x' button setup at the top leftmost of the screen
       useLayoutEffect(() => {
           navigation.setOptions({
               headerLeft: () => (
@@ -46,6 +49,7 @@ const [quizStarted, setQuizStarted] = useState(false);
   const [correctCount, setCorrectCount] = useState(0);
   const [wrongCount, setWrongCount] = useState(0);
 
+// Reset quiz state when the screen is focused
 useFocusEffect(
     useCallback(() => {
     setIsModalVisible(false);
@@ -63,6 +67,7 @@ useFocusEffect(
 
   const currentQuestion = questions[currentQuestionIndex];
 
+// Handle answer selection
   const handleAnswer = (selectedAnswer: string) => {
       if (selectedAnswer === currentQuestion.correctAnswer) {
         setIsAnswerCorrect(true);
@@ -75,6 +80,7 @@ useFocusEffect(
     };
 
 
+// Handle next question or finish the quiz if its the last question
   const handleNextQuestion = () => {
   setIsModalVisible(false);
     if (currentQuestionIndex < questions.length - 1) {
@@ -88,6 +94,7 @@ useFocusEffect(
 
   const isLastQuestion = currentQuestionIndex === questions.length - 1;
 
+// Handle the completion of the quiz and save results
   const handleFinishQuiz = async () => {
     try {
       await AsyncStorage.setItem('quiz1Completed', 'true');
@@ -171,6 +178,7 @@ useFocusEffect(
   );
 }
 
+// StyleSheet for UI layout and styling
 const styles = StyleSheet.create({
   container: {
     flex: 1,

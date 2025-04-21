@@ -4,8 +4,10 @@ import React, { useState, useCallback } from 'react';
 import { Link, useFocusEffect } from 'expo-router';
 import Animated, {SlideInRight } from "react-native-reanimated";
 
+// Custom button component
 import Button from '@/components/Button';
 
+// The Index screen displays the four buttons used to go each topic
 export default function Index() {
 const [key, setKey] = useState(0);
 
@@ -38,7 +40,7 @@ const [key, setKey] = useState(0);
   );
 }
 
-
+// StyleSheet for UI layout and styling
 const styles = StyleSheet.create({
     container: {
         flex: 1,

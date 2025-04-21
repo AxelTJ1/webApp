@@ -4,9 +4,12 @@ import React, { useState, useCallback } from 'react';
 import { useFocusEffect } from 'expo-router';
 import Animated, { SlideInRight } from "react-native-reanimated";
 
+// Custom button component
 import Button from '@/components/Button';
 
+// The About screen displays user progress, references, and CC license
 export default function About() {
+// State variables to track completion and scores for quizzes
   const [key, setKey] = useState(0);
   const [quiz1Completed, setQuiz1Completed] = useState(false);
   const [quiz2Completed, setQuiz2Completed] = useState(false);
@@ -15,8 +18,10 @@ export default function About() {
   const [score2, setScore2] = useState({ correct: 0, wrong: 0 });
   const [score3, setScore3] = useState({ correct: 0, wrong: 0 });
 
+// useFocusEffect runs the effect when the screen is opened
   useFocusEffect(
       useCallback(() => {
+      // Check completion and scores for Quiz 1
         const checkQuiz1Completion = async () => {
           const completed1 = await AsyncStorage.getItem('quiz1Completed');
           setQuiz1Completed(completed1 === 'true');
@@ -27,6 +32,7 @@ export default function About() {
           }
         };
 
+        // Check completion and scores for Quiz 2
         const checkQuiz2Completion = async () => {
                   const completed2 = await AsyncStorage.getItem('quiz2Completed');
                   setQuiz2Completed(completed2 === 'true');
@@ -37,6 +43,7 @@ export default function About() {
                   }
                 };
 
+        // Check completion and scores for Quiz 3
         const checkQuiz3Completion = async () => {
                           const completed3 = await AsyncStorage.getItem('quiz3Completed');
                           setQuiz3Completed(completed3 === 'true');
@@ -124,6 +131,7 @@ export default function About() {
   );
 }
 
+// StyleSheet for UI layout and styling
 const styles = StyleSheet.create({
   container: {
     flex: 1,

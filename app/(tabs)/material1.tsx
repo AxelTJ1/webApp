@@ -4,18 +4,25 @@ import React, { useLayoutEffect, useState, useCallback, useRef, useEffect } from
 import { useVideoPlayer, VideoView } from 'expo-video';
 import { useEvent } from 'expo';
 
+// Custom button component
 import Button from '@/components/Button';
 
+// Asset for video
 const assetId = require('@/assets/video/CPU_Design.mp4');
 
+// Main component for the Material1 screen
 export default function Material1() {
+// Get dimensions of the device screen
   const { width, height } = Dimensions.get('window');
 
+  // calculate the video size relative to the device screen
   const videoWidth = width * 0.9;
   const videoHeight = height * 0.25;
   const scrollBoxHeight = height * 0.4;
 
+    // Initialize video player with the asset id
     const player = useVideoPlayer(assetId, (player) => {
+        // Allows video looping
         player.loop = true;
       });
 
@@ -23,6 +30,7 @@ export default function Material1() {
 
       const navigation = useNavigation();
 
+      // 'x' button setup at the top leftmost of the screen
       useLayoutEffect(() => {
           navigation.setOptions({
               headerLeft: () => (
@@ -43,11 +51,13 @@ export default function Material1() {
                 setKey((prevKey) => prevKey + 1);
 
                 return () => {
+                      // Pause the video when user leaves the screen
                       player.pause();
                     };
               }, [])
               );
 
+              // Play the video when player is initialized
               useEffect(() => {
                 if (player) {
                   player.play();
@@ -101,6 +111,7 @@ export default function Material1() {
   );
 }
 
+// StyleSheet for UI layout and styling
 const styles = StyleSheet.create({
   container: {
     flex: 1,

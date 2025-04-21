@@ -2,6 +2,7 @@ import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { LogBox } from 'react-native';
 
+// The RootLayout sets up the overall layout for the app
 export default function RootLayout() {
   return (
       <>

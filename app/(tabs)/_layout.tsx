@@ -1,9 +1,14 @@
 import { Tabs, useSegments } from "expo-router";
 import Ionicons from '@expo/vector-icons/Ionicons';
 
+// TabLayout component that handles the tab navigation
 export default function TabLayout() {
     const segments = useSegments();
+
+    // List of screens that shouldn't appear on the tab bar
     const hiddenRoutes = ['material1','quiz1', 'material2','quiz2', 'material3','quiz3', 'material4','quiz4', 'complete'];
+
+    // Check if the current segment matches any of the hidden routes, if yes hide the screen from tab bar
     const isTabBarHidden = segments.some(segment => hiddenRoutes.includes(segment));
   return (
       <Tabs screenOptions={{
